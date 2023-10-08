@@ -1,24 +1,42 @@
-import { Bot } from "./bot";
+// import Bot from "./Bot";
+// import express = require('express');
+// const port = 54321;
 
-const express = require('express');
-const { startDriver } = require('./driver')
-const port = 54321;
+// export enum MessageType {
+//     PLAY
+// }
 
-export async function startServer(bot: Bot) {
+// export default class Server {
 
-    const driver = await startDriver(bot);
+//     app;
 
-    const app = express();
-    app.use(express.json());
+//     async start(bot: Bot) {
 
-    app.post('/message', async function (req: any, res: any) {
-        try {
-            const { type, payload } = req.body;
-            const response = await driver.handleMessage(type, payload)
-            res.send(JSON.stringify(response))
-        } catch (e) { }
-    });
+//         const driver = await startDriver(bot);
 
-    app.listen(port, () => console.log(`[SERVER] listening on port ${port}`));
+//         const app = express();
+//         app.use(express.json());
 
-}
+//         app.post('/message', async function (req: any, res: any) {
+//             try {
+//                 const { type, payload } = req.body;
+//                 const response = await driver.handleMessage(type, payload)
+//                 res.send(JSON.stringify(response))
+//             } catch (e) { }
+//         });
+
+//         app.listen(port, () => console.log(`[SERVER] listening on port ${port}`));
+
+//     }
+
+//     send(type: MessageType, message: any) {
+//         switch (type) {
+//             case MessageType.PLAY: if (message as string) this.play(message as string)
+//         }
+//     }
+
+//     play(message: string) {
+
+//     }
+// }
+export { }
